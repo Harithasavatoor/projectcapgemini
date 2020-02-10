@@ -11,7 +11,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import com.capgemini.medicalstoremanagement.dao.VisitorDAO;
-import com.capgemini.medicalstoremanagement.dto.VisitorInfo;
 
 public class VisitorDAOImp implements VisitorDAO {
 	static Logger log = LogManager.getLogger("VisitorDAO");
@@ -62,7 +61,7 @@ public class VisitorDAOImp implements VisitorDAO {
 				visitorinfo.setUserPassword(rs.getString("userPassword"));
 				visitorinfo.setUserBookingId(rs.getInt("userBookingId"));
 				break;
-				//System.out.println(visitorinfo.getUserId());
+				//log.debug(visitorinfo.getUserId());
 			}
 		}catch(Exception e)
 		{
