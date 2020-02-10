@@ -7,10 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.capgemini.medicalstoremanagement.dao.VisitorDAO;
 import com.capgemini.medicalstoremanagement.dto.VisitorInfo;
 
 public class VisitorDAOImp implements VisitorDAO {
+	static Logger log = LogManager.getLogger("VisitorDAO");
 	public  void detailsInfo()  {
 		Connection conn = null;
 		Statement stmt = null;
@@ -34,17 +38,17 @@ public class VisitorDAOImp implements VisitorDAO {
 				Date userMedBookingDate=rs.getDate("userMedBookingDate");
 				String userPassword=rs.getString("userAddress");
 				int userBookingId=rs.getInt("userBookingId");
-				System.out.println("userid: "+userId);
-				System.out.println("username: " +userName );
-				System.out.println("usermobno: " + userMobno);
-				System.out.println("useraddress: " + userAddress);
-				System.out.println("userpincode: " + userPincode);
-				System.out.println("userdob: " + userDob);
-				System.out.println("userdisease: " + userDisease);
-				System.out.println("medicineid: " + medicineId);
-				System.out.println("usermedbookingdate: " + userMedBookingDate);
-				System.out.println("userpassword: " + userPassword);
-				System.out.println("userbookingid: " + userBookingId);
+				log.debug("userid: "+userId);
+				log.debug("username: " +userName );
+				log.debug("usermobno: " + userMobno);
+				log.debug("useraddress: " + userAddress);
+				log.debug("userpincode: " + userPincode);
+				log.debug("userdob: " + userDob);
+				log.debug("userdisease: " + userDisease);
+				log.debug("medicineid: " + medicineId);
+				log.debug("usermedbookingdate: " + userMedBookingDate);
+				log.debug("userpassword: " + userPassword);
+				log.debug("userbookingid: " + userBookingId);
 				//VisitorInfo visitorinfo=new VisitorInfo();
 				visitorinfo.setUserId( rs.getInt("userId"));
 				visitorinfo.setUserName(rs.getString("userName"));
@@ -98,12 +102,12 @@ public class VisitorDAOImp implements VisitorDAO {
 				Date medicineExpDate=rs.getDate("medicineMfgDate");
 				Date medicineMfgDate =rs.getDate("medicineExpDate");
 				String medicineCompany=rs.getString("medicineCompany");
-				System.out.println("medicineId: "+medicineId);
-				System.out.println("medicineName: "+medicineName);
-				System.out.println("medicinePrice: "+medicinePrice);
-				System.out.println("medicineExpDate: "+medicineMfgDate);
-				System.out.println("medicineMfgDate: "+medicineExpDate);
-				System.out.println("medicineCompany: "+medicineCompany);
+				log.debug("medicineId: "+medicineId);
+				log.debug("medicineName: "+medicineName);
+				log.debug("medicinePrice: "+medicinePrice);
+				log.debug("medicineExpDate: "+medicineMfgDate);
+				log.debug("medicineMfgDate: "+medicineExpDate);
+				log.debug("medicineCompany: "+medicineCompany);
 			//	VisitorMedicineInfo visitormedinfo=new VisitorMedicineInfo();
 				visitormedinfo.setMedicineId(rs.getInt("medicineId"));
 				visitormedinfo.setMedicineName(rs.getString("medicineName"));
